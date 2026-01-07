@@ -51,6 +51,44 @@
   <div class="container">
     <div class="agent-wrapper">
 
+      <script type='text/javascript'>
+  function initEmbeddedMessaging() {
+    try {
+      embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+                        window.addEventListener("onEmbeddedMessagingReady", e => {
+    embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
+      "_firstName": {
+        "value": "GDO",
+        "isEditableByEndUser": true
+      },
+      "_lastName": {
+        "value": "DEMO User",
+        "isEditableByEndUser": true
+      },
+      "_email": {
+        "value": "sohail.azam@salesforce.com",
+        "isEditableByEndUser": true
+      },
+      "_subject": {
+        "value": "Program Eligibility",
+        "isEditableByEndUser": true
+      }
+    });
+  });
+      embeddedservice_bootstrap.init(
+        '00DO900000Nmck5',
+        'MakanaHealthAgentMS',
+        'https://makana360--fulldevbox.sandbox.my.site.com/ESWMakanaHealthAgentMS1765988550434',
+        {
+          scrt2URL: 'https://makana360--fulldevbox.sandbox.my.salesforce-scrt.com'
+        }
+      );
+    } catch (err) {
+      console.error('Error loading Embedded Messaging: ', err);
+    }
+  };
+</script>
+<script type='text/javascript' src='https://makana360--fulldevbox.sandbox.my.site.com/ESWMakanaHealthAgentMS1765988550434/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
     </div>
 
